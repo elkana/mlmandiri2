@@ -1,0 +1,185 @@
+<div class="row detail">
+	<div class="col-sm-12">
+		<h2><strong>{{ctrl.json.account_cust_name}} (Age: {{ctrl.json.age}})</strong></h2>
+		<!-- {{ctrl.json}}  -->
+		<div class="row">
+			<div class="col-sm-7">
+				<table class="table table-bordered table-hover table-striped table-condensed">
+					<thead></thead>
+					<tbody>
+						<tr>
+							<td>Marital Status</td>
+							<td>{{ctrl.json.category}}</td>
+						</tr>
+						<tr>
+							<td>Kids</td>
+							<td>{{ctrl.json.kids}}</td>
+						</tr>
+						<tr>
+							<td>Houses</td>
+							<td>{{ctrl.json.houses}}</td>
+						</tr>
+						<tr>
+							<td>Vehicles</td>
+							<td>{{ctrl.json.vehicles}}</td>
+						</tr>
+						<tr>
+							<td>City</td>
+							<td>{{ctrl.json.city}}</td>
+						</tr>
+						<!--tr>
+							<td>Region</td>
+							<td>{{ctrl.json.region}}</td>
+						</tr-->
+						<tr>
+							<td>Country</td>
+							<td>{{ctrl.json.country}}</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Account Information:</h3>
+				<table class="table table-bordered table-hover table-striped table-condensed">
+					<tbody>
+						<tr>
+							<td>Account No</td>
+							<td>{{ctrl.json.account_no}}</td>
+						</tr>
+						<tr>
+							<td>Customer Class</td>
+							<td><a href='#'>{{ctrl.json.cust_class}}</a></td>
+						</tr>
+						<tr>
+							<td>Product Type</td>
+							<td>{{ctrl.json.product_type}}</td>
+						</tr>
+						<tr>
+							<td>Transactions/Month</td>
+							<td><a href='#'>{{ctrl.json.trans_per_month}}</a></td>
+						</tr>
+						<tr>
+							<td>Balance</td>
+							<td>{{ctrl.json.balance | commaLess | currency}}</td>
+						</tr>
+						<tr>
+							<td>Salary</td>
+							<td>{{ctrl.json.salary | currency}}</td>
+						</tr>
+						<tr>
+							<td>Last Login</td>
+							<td>{{ctrl.json.last_login_date | date}}</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+			<div class="col-sm-5">
+				<!-- saldo>50juta -->
+				<div class="row" ng-init="myVar='test'" ng-if="ctrl.json.age >= '22' 
+									
+									&& ctrl.json.salary >= '8000000'
+									&& ctrl.json.kids === '0'
+									&& ctrl.json.houses === '0'
+									&& ctrl.json.vehicles === '0'
+									">
+					<h3><a href="#">Mandiri Deposit</a></h3>
+				</div>
+				<!-- saldo>100juta -->
+				<div class="row" ng-init="myVar='test'" ng-if="ctrl.json.age >= '30' 				
+									&& ctrl.json.category === 'menikah'
+									
+									&& ctrl.json.salary >= '12000000'
+									&& ctrl.json.houses === '0'
+									&& ctrl.json.kids === '0'
+									&& ctrl.json.vehicles === '1'
+									">
+					<h3>Mandiri Consumen Loan</h3>
+				</div>
+				<!-- saldo>10juta -->
+				<div class="row" ng-init="myVar='test'" ng-if="ctrl.json.age >= '22' 
+									
+									&& ctrl.json.salary >= '8000000'
+									&& ctrl.json.houses === '0'
+									&& ctrl.json.kids === '0'
+									&& ctrl.json.vehicles === '1'
+									">
+					<h3>Mandiri Credit Card</h3>
+				</div>
+				<!-- saldo>5juta -->
+				<div class="row" ng-init="myVar='test'" ng-if="ctrl.json.age >= '18' 
+									
+									&& ctrl.json.salary >= '8000000'
+									&& ctrl.json.houses === '0'
+									&& ctrl.json.kids === '0'
+									&& ctrl.json.vehicles === '0'
+									">
+					<h3>Mandiri Savings</h3>
+				</div>
+				<!-- saldo>20juta -->
+				<div class="row" ng-init="myVar='test'" ng-if="ctrl.json.age >= '25' 
+									&& ctrl.json.category === 'menikah'
+									
+									&& ctrl.json.salary >= '8000000'
+									&& ctrl.json.houses === '0'
+									&& ctrl.json.kids > '1'
+									&& ctrl.json.vehicles === '0'
+									">
+					<h3>Investment And Bank Insurance</h3>
+				</div>
+
+			</div>
+		</div>		
+		<div class="row">
+		</div>
+
+		<hr>
+			<!-- note -->
+			<uib-tabset type="pills" style='display: none;'>
+				<uib-tab ng-if="ctrl.type==='json'">
+					<uib-tab-heading>JSON</uib-tab-heading>
+					<div class="col-sm-9">
+						<json-explorer data="ctrl.json"></json-explorer>
+					</div>
+				</uib-tab>
+				<uib-tab ng-if="ctrl.type==='xml' || ctrl.type==='txt'">
+					<uib-tab-heading >XML</uib-tab-heading>
+					<div class="col-sm-9">
+						<pre class="pre-xml">{{ctrl.xml}}</pre>
+					</div>
+				</uib-tab>
+				<uib-tab ng-if="ctrl.type==='binary'">
+					<uib-tab-heading >Binary</uib-tab-heading>
+					<div class="col-sm-9">
+						<a target="_blank" ng-href="/v1/documents?uri={{ctrl.uri}}&transform=download"
+             class="btn btn-default">Download</a>
+					</div>
+				</uib-tab>
+			</uib-tabset>
+		</div>
+		<div class="col-sm-5">
+			<!--div id="buttons-detail">
+				<button class="btn btn-default" ui-sref="root.search">Search</button>
+				<button class="btn btn-primary"
+              ng-show="!rootCtrl.currentUser.disallowUpdates" 
+              ui-sref="root.edit({uri: ctrl.uri, prev: 'root.view'})">Edit</button>
+				<button class="btn btn-primary"
+              ng-show="!rootCtrl.currentUser.disallowUpdates" 
+              mwl-confirm
+              title="This will permanently delete {{ctrl.uri}}, are you sure?"
+              confirm-text="Yes"
+              cancel-text="No"
+              placement="bottom"
+              on-confirm="ctrl.delete()"
+              on-cancel="cancelClicked = true"
+              confirm-button-type="danger"
+              cancel-button-type="default">Delete</button>
+			</div>
+			<br>
+				<div class="panel panel-default">
+					<div class="panel-heading">Similar</div>
+					<div class="panel-body">
+						<ml-similar uri="{{ctrl.uri}}" limit="5"></ml-similar>
+					</div>
+				</div>
+			</div>
+		</div>
+		
