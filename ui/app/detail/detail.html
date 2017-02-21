@@ -1,7 +1,7 @@
 <div class="row detail">
 	<div class="col-sm-12">
 		<h2><strong>{{ctrl.json.account_cust_name}} (Age: {{ctrl.json.age}})</strong></h2>
-	<!-- 	{{ctrl.doc}} --> 
+		<!-- 	{{ctrl.doc}} --> 
 		<div class="row">
 			<div class="col-sm-7">
 				<table class="table table-bordered table-hover table-striped table-condensed">
@@ -74,58 +74,99 @@
 			</div>
 			<div class="col-sm-5">
 				<!-- saldo>50juta -->
-				<div class="row" ng-init="myVar='test'" ng-if="ctrl.json.age >= '22' 
-									
+				<div class="row btn-primary img-rounded" ng-init="mandiriDeposit=ctrl.json.age >= '22' 
+
 									&& ctrl.json.salary >= '8000000'
 									&& ctrl.json.kids === '0'
 									&& ctrl.json.houses === '0'
-									&& ctrl.json.vehicles === '0'
-									">
-					<h3><a href="#">Mandiri Deposit</a></h3>
+									&& ctrl.json.vehicles === '0'">
+					<h3>Mandiri Deposit</h3>
+					<div ng-if="mandiriDeposit">
+						<!-- code to render a large video block-->
+						Match
+					</div>
+					<div ng-if="!mandiriDeposit">
+						<!-- code to render the regular video block -->
+						Not Match
+					</div>
 				</div>
 				<!-- saldo>100juta -->
-				<div class="row" ng-init="myVar='test'" ng-if="ctrl.json.age >= '30' 				
+				<br>
+				<div class="row btn-success img-rounded" ng-init="mandiriConsumenLoan=ctrl.json.age >= '30' 				
 									&& ctrl.json.category === 'menikah'
-									
+
 									&& ctrl.json.salary >= '12000000'
 									&& ctrl.json.houses === '0'
 									&& ctrl.json.kids === '0'
-									&& ctrl.json.vehicles === '1'
-									">
-					<h3><a href="#">Mandiri Consumen Loan</a></h3>
+									&& ctrl.json.vehicles === '1'">
+					<h3>Mandiri Consumen Loan</h3>
+					<div ng-if="mandiriConsumenLoan">
+						<!-- code to render a large video block-->
+						Match
+					</div>
+					<div ng-if="!mandiriConsumenLoan">
+						<!-- code to render the regular video block -->
+						Not Match
+					</div>
 				</div>
+				<br>				
 				<!-- saldo>10juta -->
-				<div class="row" ng-init="myVar='test'" ng-if="ctrl.json.age >= '22' 
-									
+				<div class="row btn-info img-rounded" ng-init="mandiriCreditCard=ctrl.json.age >= '22' 
+
 									&& ctrl.json.salary >= '8000000'
 									&& ctrl.json.houses === '0'
 									&& ctrl.json.kids === '0'
-									&& ctrl.json.vehicles === '1'
-									">
-					<h3><a href="#">Mandiri Credit Card</a></h3>
+									&& ctrl.json.vehicles === '1'">
+					<h3>Mandiri Credit Card</h3>
+					<div ng-if="mandiriCreditCard">
+						<!-- code to render a large video block-->
+						Match
+					</div>
+					<div ng-if="!mandiriCreditCard">
+						<!-- code to render the regular video block -->
+						Not Match
+					</div>
 				</div>
+				<br>				
+				
 				<!-- saldo>5juta -->
-				<div class="row" ng-init="myVar='test'" ng-if="ctrl.json.age >= '18' 
-									
+				<div class="row btn-warning img-rounded" ng-init="mandiriSavings=ctrl.json.age >= '18' 
+
 									&& ctrl.json.salary >= '8000000'
 									&& ctrl.json.houses === '0'
 									&& ctrl.json.kids === '0'
-									&& ctrl.json.vehicles === '0'
-									">
-					<h3><a href="#">Mandiri Savings</a></h3>
+									&& ctrl.json.vehicles === '0'">
+					<h3>Mandiri Savings</h3>
+					<div ng-if="mandiriSavings">
+						<!-- code to render a large video block-->
+						Match
+					</div>
+					<div ng-if="!mandiriSavings">
+						<!-- code to render the regular video block -->
+						Not Match
+					</div>
 				</div>
+				<br>				
+
 				<!-- saldo>20juta -->
-				<div class="row" ng-init="myVar='test'" ng-if="ctrl.json.age >= '25' 
+				<div class="row btn-danger img-rounded" ng-init="mandiriIBI=ctrl.json.age >= '25' 
 									&& ctrl.json.category === 'menikah'
-									
+
 									&& ctrl.json.salary >= '8000000'
 									&& ctrl.json.houses === '0'
 									&& ctrl.json.kids > '1'
-									&& ctrl.json.vehicles === '0'
-									">
-					<h3><a href="#">Investment And Bank Insurance</a></h3>
+									&& ctrl.json.vehicles === '0'">
+					<h3>Investment And Bank Insurance</h3>
+					<div ng-if="mandiriIBI">
+						<!-- code to render a large video block-->
+						Match
+					</div>
+					<div ng-if="!mandiriIBI">
+						<!-- code to render the regular video block -->
+						Not Match
+					</div>
 				</div>
-
+				
 			</div>
 		</div>		
 		<div class="row">
