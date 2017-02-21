@@ -108,7 +108,7 @@
 			<div class="col-sm-5">
 				<!-- saldo>50juta -->				
 				<div class="row btn-primary img-rounded" ng-init="mandiriDeposit=ctrl.json.age >= '22' 
-
+									&& (ctrl.json.balance | commaLess) >= 50000000
 									&& ctrl.json.salary >= '8000000'
 									&& ctrl.json.kids === '0'
 									&& ctrl.json.houses === '0'
@@ -135,7 +135,7 @@
 				<br/>
 				<div class="row btn-success img-rounded" ng-init="mandiriConsumenLoan=ctrl.json.age >= '30' 				
 									&& ctrl.json.category === 'menikah'
-
+									&& (ctrl.json.balance | commaLess) >= 100000000
 									&& ctrl.json.salary >= '12000000'
 									&& ctrl.json.houses === '0'
 									&& ctrl.json.kids === '0'
@@ -162,7 +162,7 @@
 				<br/>				
 				<!-- saldo>10juta -->
 				<div class="row btn-info img-rounded" ng-init="mandiriCreditCard=ctrl.json.age >= '22' 
-
+									&& (ctrl.json.balance | commaLess) >= 10000000
 									&& ctrl.json.salary >= '8000000'
 									&& ctrl.json.houses === '0'
 									&& ctrl.json.kids === '0'
@@ -189,7 +189,7 @@
 
 				<!-- saldo>5juta -->
 				<div class="row btn-warning img-rounded" ng-init="mandiriSavings=ctrl.json.age >= '18' 
-
+									&& (ctrl.json.balance | commaLess) >= 18000000
 									&& ctrl.json.salary >= '8000000'
 									&& ctrl.json.houses === '0'
 									&& ctrl.json.kids === '0'
@@ -217,7 +217,7 @@
 				<!-- saldo>20juta -->
 				<div class="row btn-danger img-rounded" ng-init="mandiriIBI=ctrl.json.age >= '25' 
 									&& ctrl.json.category === 'menikah'
-
+									&& (ctrl.json.balance | commaLess) >= 20000000
 									&& ctrl.json.salary >= '8000000'
 									&& ctrl.json.houses === '0'
 									&& ctrl.json.kids > '1'
