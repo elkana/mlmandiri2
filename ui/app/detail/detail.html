@@ -156,8 +156,8 @@
 			</uib-tabset>
 		</div>
 		<div class="col-sm-5">
-			<!--div id="buttons-detail">
-				<button class="btn btn-default" ui-sref="root.search">Search</button>
+			<div id="buttons-detail">
+				<button class="btn btn-default" ui-sref="root.search">Search Again</button>
 				<button class="btn btn-primary"
               ng-show="!rootCtrl.currentUser.disallowUpdates" 
               ui-sref="root.edit({uri: ctrl.uri, prev: 'root.view'})">Edit</button>
@@ -175,7 +175,7 @@
 			</div>
 			<br>
 				<div class="panel panel-default">
-					<div class="panel-heading">Similar</div>
+					<div class="panel-heading">Similar Documents named {{ctrl.json.account_cust_name}}</div>
 					<div class="panel-body">
 						<ml-similar uri="{{ctrl.uri}}" limit="5"></ml-similar>
 					</div>
