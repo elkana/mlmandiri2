@@ -163,4 +163,8 @@
   <extract-document-data selected="all">
   </extract-document-data>
 
+  <result-decorator apply="decorator"
+     ns="http://marklogic.com/poc/mandiri"
+     at="/mandiri-result-decorator.xqy"/>
+
 </options>

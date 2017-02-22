@@ -1,0 +1,78 @@
+<div ng-repeat="result in results track by $index">
+	<h3>
+		<a ui-sref="root.view({uri: result.uri})">{{ result.cust_name }} [{{ result.cust_class}}]</a>
+	</h3>
+
+
+	<!--h4>
+    <a ui-sref="root.view({uri: result.uri})">{{ result.label || result.uri }}</a>
+  </h4-->
+	<div class="matches">
+		<div class="match" ng-repeat="match in result.matches track by $index">
+			<em ng-repeat="text in match['match-text'] track by $index">
+				<span ng-class="{ highlight: !!text.highlight }">{{ text.highlight }}</span>
+			</em>
+		</div>
+	</div>
+	<table class="table table-condensed bs-example">
+		<thead>
+			<tr>
+				<th>Class</th>
+				<th>Age</th>
+				<th>City</th>
+				<th>Salary</th>
+				<th>Balance</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{ result.cust_class }}</td>
+				<td>{{ result.age }}</td>
+				<td>{{ result.city }}</td>
+				<td>{{ result.salary_per_month | currency }}</td>
+				<td ng-init="hasil=result.balance;">Rp. {{ hasil }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="panel panel-default">
+		<div class="panel-heading" style="text-align:start;font-style:bold">
+			<h3><a ui-sref="root.view({uri: result.uri})">{{ result.cust_name }}</a></h3>
+
+			<div class="matches">
+				<div class="match" ng-repeat="match in result.matches track by $index">
+					<em ng-repeat="text in match['match-text'] track by $index">
+						<span ng-class="{ highlight: !!text.highlight }">{{ text.highlight }}</span>
+					</em>
+				</div>
+			</div>
+
+		</div>
+		<div class="panel-body" style="min-height:1px">
+			<table class="table table-condensed bs-example">
+				<thead>
+					<tr>
+						<th>Class</th>
+						<th>Age</th>
+						<th>City</th>
+						<th>Salary</th>
+						<th>Balance</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{ result.cust_class }}</td>
+						<td>{{ result.age }}</td>
+						<td>{{ result.city }}</td>
+						<td>{{ result.salary_per_month | currency }}</td>
+						<td ng-init="hasil=result.balance;">Rp. {{ hasil }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+	<hr>
+	</div>
+	
