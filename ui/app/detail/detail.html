@@ -1,283 +1,248 @@
 <div class="row detail">
-	<div class="col-sm-12">
+	<div class="col-md-7">
 		<h2 style="font-family: 'Roboto', sans-serif;">
 			<strong>{{ctrl.json.account_cust_name}} (Age: {{ctrl.json.age}})</strong>
 		</h2>
-		<!-- 	{{ctrl.doc}} --> 
+
 		<div class="row">
-			<div class="col-sm-7">
-				<div class="row">
-					<div class="col-md-3 hidden-sm img-thumbnail" style="height:100%">
+			<div class="col-md-3 hidden-sm img-thumbnail">
 					Photo
+			</div>
+			<div class="col-md-9">
+				<div class="panel panel-default">
+					<div class="panel-heading" style="text-align:start;font-style:bold">
+						<strong>Basic Information</strong>
 					</div>
-					<div class="col-md-9">
-						<div class="panel panel-default">
-							<div class="panel-heading" style="text-align:start;font-style:bold">
-								<strong>Basic Information</strong>
-							</div>
-							<div class="panel-body">
-								<table class="table table-bordered table-hover table-striped table-condensed">				
-									<tbody>
-										<tr>
-											<td>Marital Status</td>
-											<td>{{ctrl.json.category}}</td>
-										</tr>
-										<tr>
-											<td>Kids</td>
-											<td>{{ctrl.json.kids}}</td>
-										</tr>
-										<tr>
-											<td>Houses</td>
-											<td>{{ctrl.json.houses}}</td>
-										</tr>
-										<tr>
-											<td>Vehicles</td>
-											<td>{{ctrl.json.vehicles}}</td>
-										</tr>
-										<tr>
-											<td>City</td>
-											<td>{{ctrl.json.city}}</td>
-										</tr>
-										<!--tr>
+					<div class="panel-body">
+						<table class="table table-bordered table-hover table-striped table-condensed">				
+							<tbody>
+								<tr>
+									<td>Marital Status</td>
+									<td>{{ctrl.json.category}}</td>
+								</tr>
+								<tr>
+									<td>Kids</td>
+									<td>{{ctrl.json.kids}}</td>
+								</tr>
+								<tr>
+									<td>Houses</td>
+									<td>{{ctrl.json.houses}}</td>
+								</tr>
+								<tr>
+									<td>Vehicles</td>
+									<td>{{ctrl.json.vehicles}}</td>
+								</tr>
+								<tr>
+									<td>City</td>
+									<td>{{ctrl.json.city}}</td>
+								</tr>
+								<!--tr>
 							<td>Region</td>
 							<td>{{ctrl.json.region}}</td>
 						</tr-->
-										<tr>
-											<td>Country</td>
-											<td>{{ctrl.json.country}}</td>
-										</tr>
-									</tbody>
-								</table>
+								<tr>
+									<td>Country</td>
+									<td>{{ctrl.json.country}}</td>
+								</tr>
+							</tbody>
+						</table>
 
-							</div>
-						</div>
 					</div>
 				</div>
+			</div>		
+		</div>
 
-				<div class="row">
-					<div class="panel panel-default">
-						<div class="panel-heading" style="text-align:start;font-style:bold">
-							<strong>Account Information</strong>
-						</div>
-						<div class="panel-body">
-							<table class="table table-bordered table-hover table-striped table-condensed">
-								<tbody>
-									<tr>
-										<td>Account No</td>
-										<td>{{ctrl.json.account_no}}</td>
-									</tr>
-									<tr>
-										<td>Customer Class</td>
-										<td>
-											<a href='#'>{{ctrl.json.cust_class}}</a>
-										</td>
-									</tr>
-									<tr>
-										<td>Product Type</td>
-										<td>{{ctrl.json.product_type}}</td>
-									</tr>
-									<tr>
-										<td>Transactions/Month</td>
-										<td>
-											<a href='#'>{{ctrl.json.trans_per_month}}</a>
-										</td>
-									</tr>
-									<tr>
-										<td>Balance</td>
-										<td>{{ctrl.json.balance | commaLess | currency}}</td>
-									</tr>
-									<tr>
-										<td>Salary</td>
-										<td>{{ctrl.json.salary | currency}}</td>
-									</tr>
-									<tr>
-										<td>Last Login</td>
-										<td>{{ctrl.json.last_login_date | date}}</td>
-									</tr>
-								</tbody>
-							</table>
-
-						</div>
+		<div class="row">
+			<div class="col-md-12 hidden-xs">
+				<div class="panel panel-default">
+					<div class="panel-heading" style="text-align:start;font-style:bold">
+						<strong>Account Information</strong>
 					</div>
-				</div>
+					<div class="panel-body">
+						<table class="table table-bordered table-hover table-striped table-condensed">
+							<tbody>
+								<tr>
+									<td>Account No</td>
+									<td>{{ctrl.json.account_no}}</td>
+								</tr>
+								<tr>
+									<td>Customer Class</td>
+									<td>
+										<a href='#'>{{ctrl.json.cust_class}}</a>
+									</td>
+								</tr>
+								<tr>
+									<td>Product Type</td>
+									<td>{{ctrl.json.product_type}}</td>
+								</tr>
+								<tr>
+									<td>Transactions/Month</td>
+									<td>
+										<a href='#'>{{ctrl.json.trans_per_month}}</a>
+									</td>
+								</tr>
+								<tr>
+									<td>Balance</td>
+									<td>{{ctrl.json.balance | commaLess | currency}}</td>
+								</tr>
+								<tr>
+									<td>Salary</td>
+									<td>{{ctrl.json.salary | currency}}</td>
+								</tr>
+								<tr>
+									<td>Last Login</td>
+									<td>{{ctrl.json.last_login_date | date}}</td>
+								</tr>
+							</tbody>
+						</table>
 
-
+					</div>
+				</div>	
 			</div>
+		</div>
+	</div>
 
-
-			<div class="col-sm-5">
-				<!-- saldo>50juta -->				
-				<div class="row btn-primary img-rounded" ng-init="mandiriDeposit=ctrl.json.age >= '22' 
+	<div class="col-md-5">
+		<div class="btn btn-primary btn-block img-rounded" style="text-align:left" ng-init="mandiriDeposit=ctrl.json.age >= '22' 
 									&& (ctrl.json.balance | commaLess) >= 50000000
 									&& ctrl.json.salary >= '8000000'
 									&& ctrl.json.kids === '0'
 									&& ctrl.json.houses === '0'
 									&& ctrl.json.vehicles === '0'" data-toggle="collapse" data-target="#demo1" >
-					<h3>Mandiri Deposit</h3>
-					<div ng-if="mandiriDeposit">
-						<!-- code to render a large video block-->
+			<h3>Mandiri Deposit</h3>
+			<div ng-if="mandiriDeposit">
+				<!-- code to render a large video block-->
 						Match
-					</div>
-					<div ng-if="!mandiriDeposit" >
-						<!-- code to render the regular video block -->
+			</div>
+			<div ng-if="!mandiriDeposit" >
+				<!-- code to render the regular video block -->
 						Not Match
-						<div id="demo1" class="collapse">
-							<p/>Salary &gt;= 8 JUTA
-							<br/>Balance &gt;= 50 JUTA
-							<br/>Age &gt;= 22 TAHUN
-							<br/>Kids = 0
-							<br/>houses = 0
-							<br/>vehicles = 0
-						</div>
-					</div>
+				<div id="demo1" class="collapse">
+					<p/>Salary &gt;= 8 JUTA
+					<br/>Balance &gt;= 50 JUTA
+					<br/>Age &gt;= 22 TAHUN
+					<br/>Kids = 0
+					<br/>houses = 0
+					<br/>vehicles = 0
 				</div>
-				<!-- saldo>100juta -->
-				<br/>
-				<div class="row btn-success img-rounded" ng-init="mandiriConsumenLoan=ctrl.json.age >= '30' 				
+			</div>
+		</div>
+		<br/>
+		<div class="btn btn-success btn-block img-rounded" style="text-align:left" ng-init="mandiriConsumenLoan=ctrl.json.age >= '30' 				
 									&& ctrl.json.category === 'menikah'
 									&& (ctrl.json.balance | commaLess) >= 100000000
 									&& ctrl.json.salary >= '12000000'
 									&& ctrl.json.houses === '0'
 									&& ctrl.json.kids === '0'
 									&& ctrl.json.vehicles === '1'" data-toggle="collapse" data-target="#demo2">
-					<h3>Mandiri Consumen Loan</h3>
-					<div ng-if="mandiriConsumenLoan">
-						<!-- code to render a large video block-->
+			<h3>Mandiri Consumen Loan</h3>
+			<div ng-if="mandiriConsumenLoan">
+				<!-- code to render a large video block-->
 						Match
-					</div>
-					<div ng-if="!mandiriConsumenLoan">
-						<!-- code to render the regular video block -->
+			</div>
+			<div ng-if="!mandiriConsumenLoan">
+				<!-- code to render the regular video block -->
 						Not Match
-						<div id="demo2" class="collapse">
-							<p/>Salary &gt;= 12 JUTA
-							<br/>Balance &gt;= 100 JUTA
-							<br/>Age &gt;= 30 TAHUN
-							<br/>Status Menikah
-							<br/>Kids = 0
-							<br/>houses = 0
-							<br/>vehicles = 1
-						</div>
-					</div>
+				<div id="demo2" class="collapse">
+					<p/>Salary &gt;= 12 JUTA
+					<br/>Balance &gt;= 100 JUTA
+					<br/>Age &gt;= 30 TAHUN
+					<br/>Status Menikah
+					<br/>Kids = 0
+					<br/>houses = 0
+					<br/>vehicles = 1
 				</div>
-				<br/>				
-				<!-- saldo>10juta -->
-				<div class="row btn-info img-rounded" ng-init="mandiriCreditCard=ctrl.json.age >= '22' 
+			</div>
+		</div>
+		<br/>				
+		<div class="btn btn-info btn-block img-rounded" style="text-align:left" ng-init="mandiriCreditCard=ctrl.json.age >= '22' 
 									&& (ctrl.json.balance | commaLess) >= 10000000
 									&& ctrl.json.salary >= '8000000'
 									&& ctrl.json.houses === '0'
 									&& ctrl.json.kids === '0'
 									&& ctrl.json.vehicles === '1'" data-toggle="collapse" data-target="#demo3">
-					<h3>Mandiri Credit Card</h3>
-					<div ng-if="mandiriCreditCard">
-						<!-- code to render a large video block-->
+			<h3>Mandiri Credit Card</h3>
+			<div ng-if="mandiriCreditCard">
+				<!-- code to render a large video block-->
 						Match
-					</div>
-					<div ng-if="!mandiriCreditCard">
-						<!-- code to render the regular video block -->
+			</div>
+			<div ng-if="!mandiriCreditCard">
+				<!-- code to render the regular video block -->
 						Not Match
-						<div id="demo3" class="collapse">
-							<p/>Salary &gt;= 8 JUTA
-							<br/>Balance &gt;= 10 JUTA
-							<br/>Age &gt;= 22 TAHUN
-							<br/>Kids = 0
-							<br/>houses = 0
-							<br/>vehicles = 1
-						</div>
-					</div>
+				<div id="demo3" class="collapse">
+					<p/>Salary &gt;= 8 JUTA
+					<br/>Balance &gt;= 10 JUTA
+					<br/>Age &gt;= 22 TAHUN
+					<br/>Kids = 0
+					<br/>houses = 0
+					<br/>vehicles = 1
 				</div>
-				<br/>				
-
-				<!-- saldo>5juta -->
-				<div class="row btn-warning img-rounded" ng-init="mandiriSavings=ctrl.json.age >= '18' 
+			</div>
+		</div>
+		<br/>				
+		<div class="btn btn-warning btn-block img-rounded" style="text-align:left" ng-init="mandiriSavings=ctrl.json.age >= '18' 
 									&& (ctrl.json.balance | commaLess) >= 18000000
 									&& ctrl.json.salary >= '8000000'
 									&& ctrl.json.houses === '0'
 									&& ctrl.json.kids === '0'
 									&& ctrl.json.vehicles === '0'" data-toggle="collapse" data-target="#demo4">
-					<h3>Mandiri Savings</h3>
-					<div ng-if="mandiriSavings">
-						<!-- code to render a large video block-->
+			<h3>Mandiri Savings</h3>
+			<div ng-if="mandiriSavings">
+				<!-- code to render a large video block-->
 						Match
-					</div>
-					<div ng-if="!mandiriSavings">
-						<!-- code to render the regular video block -->
+			</div>
+			<div ng-if="!mandiriSavings">
+				<!-- code to render the regular video block -->
 						Not Match
-						<div id="demo4" class="collapse">
-							<p/>Salary &gt;= 8 JUTA
-							<br/>Balance &gt;= 18 JUTA
-							<br/>Age &gt;= 18 TAHUN
-							<br/>Kids = 0
-							<br/>houses = 0
-							<br/>vehicles = 0
-						</div>
-					</div>
+				<div id="demo4" class="collapse">
+					<p/>Salary &gt;= 8 JUTA
+					<br/>Balance &gt;= 18 JUTA
+					<br/>Age &gt;= 18 TAHUN
+					<br/>Kids = 0
+					<br/>houses = 0
+					<br/>vehicles = 0
 				</div>
-				<br/>				
-
-				<!-- saldo>20juta -->
-				<div class="row btn-danger img-rounded" ng-init="mandiriIBI=ctrl.json.age >= '25' 
+			</div>
+		</div>
+		<br/>				
+		<div class="btn btn-danger btn-block img-rounded" style="text-align:left" ng-init="mandiriIBI=ctrl.json.age >= '25' 
 									&& ctrl.json.category === 'menikah'
 									&& (ctrl.json.balance | commaLess) >= 20000000
 									&& ctrl.json.salary >= '8000000'
 									&& ctrl.json.houses === '0'
 									&& ctrl.json.kids > '1'
 									&& ctrl.json.vehicles === '0'" data-toggle="collapse" data-target="#demo5">
-					<h3>Investment And Bank Insurance</h3>
-					<div ng-if="mandiriIBI">
-						<!-- code to render a large video block-->
+			<h3>Investment And Bank Insurance</h3>
+			<div ng-if="mandiriIBI">
+				<!-- code to render a large video block-->
 						Match
-					</div>
-					<div ng-if="!mandiriIBI">
-						<!-- code to render the regular video block -->
-						Not Match
-						<div id="demo5" class="collapse">
-							<p/>Salary &gt;= 8 JUTA
-							<br/>Balance &gt;= 20 JUTA
-							<br/>Age &gt;= 25 TAHUN
-							<br/>Status Menikah
-							<br/>Kids &gt; 1
-							<br/>houses = 0
-							<br/>vehicles = 0
-						</div>
-					</div>
-				</div>
-
 			</div>
-		</div>		
-		<div class="row">
+			<div ng-if="!mandiriIBI">
+				<!-- code to render the regular video block -->
+						Not Match
+				<div id="demo5" class="collapse">
+					<p/>Salary &gt;= 8 JUTA
+					<br/>Balance &gt;= 20 JUTA
+					<br/>Age &gt;= 25 TAHUN
+					<br/>Status Menikah
+					<br/>Kids &gt; 1
+					<br/>houses = 0
+					<br/>vehicles = 0
+				</div>
+			</div>
 		</div>
 
-		<hr/>
-		<!-- note -->
-		<uib-tabset type="pills" style='display: none;'>
-			<uib-tab ng-if="ctrl.type==='json'">
-				<uib-tab-heading>JSON</uib-tab-heading>
-				<div class="col-sm-9">
-					<json-explorer data="ctrl.json"/>
-				</div>
-			</uib-tab>
-			<uib-tab ng-if="ctrl.type==='xml' || ctrl.type==='txt'">
-				<uib-tab-heading >XML</uib-tab-heading>
-				<div class="col-sm-9">
-					<pre class="pre-xml">{{ctrl.xml}}</pre>
-				</div>
-			</uib-tab>
-			<uib-tab ng-if="ctrl.type==='binary'">
-				<uib-tab-heading >Binary</uib-tab-heading>
-				<div class="col-sm-9">
-					<a target="_blank" ng-href="/v1/documents?uri={{ctrl.uri}}&transform=download"
-             class="btn btn-default">Download</a>
-				</div>
-			</uib-tab>
-		</uib-tabset>
 	</div>
-	<div class="col-sm-5">
-		<div id="buttons-detail">
-			<button class="btn btn-default" ui-sref="root.search">Search Again</button>
-			<button class="btn btn-primary"
+
+	<div class="col-sm-12 col-md-7">
+		
+		<div class="row">
+			<div id="buttons-detail">
+				<button class="btn btn-default" ui-sref="root.search">Search Again</button>
+				<button class="btn btn-primary"
               ng-show="!rootCtrl.currentUser.disallowUpdates" 
               ui-sref="root.edit({uri: ctrl.uri, prev: 'root.view'})">Edit</button>
-			<button class="btn btn-primary"
+				<button class="btn btn-primary"
               ng-show="!rootCtrl.currentUser.disallowUpdates" 
               mwl-confirm
               title="This will permanently delete {{ctrl.uri}}, are you sure?"
@@ -288,12 +253,13 @@
               on-cancel="cancelClicked = true"
               confirm-button-type="danger"
               cancel-button-type="default">Delete</button>
-		</div>
-		<br>
-			<div class="panel panel-default">
-				<div class="panel-heading">Similar Documents named {{ctrl.json.account_cust_name}}</div>
-				<div class="panel-body">
-					<ml-similar uri="{{ctrl.uri}}" limit="5"/>
+			</div>
+			<br>
+				<div class="panel panel-default">
+					<div class="panel-heading">Similar Documents named {{ctrl.json.account_cust_name}}</div>
+					<div class="panel-body">
+						<ml-similar uri="{{ctrl.uri}}" limit="5"/>
+					</div>
 				</div>
 			</div>
 		</div>
