@@ -100,16 +100,7 @@
       <path-index>TipeProduct</path-index>
     </range>
   </constraint>
-  <constraint name="Kota">
-    <range type="xs:string" facet="true" collation="http://marklogic.com/collation/codepoint">
-      <facet-option>limit=5</facet-option>
-      <facet-option>item-order</facet-option>
-      <facet-option>descending</facet-option>
-      <path-index>City</path-index>
-    </range>
-  </constraint>  
-
-  <constraint name="Umur">
+  <constraint name="Age">
 	<range type="xs:string" facet="true" collation="http://marklogic.com/collation/codepoint">
       <path-index>Umur</path-index>
       <bucket name="less than 40" lt="40">less than 40</bucket>
@@ -117,7 +108,7 @@
       <bucket name="60 to 80" lt="80" ge="60">60 to 80</bucket>
     </range>	
   </constraint>
-  <constraint name="Wilayah">
+  <constraint name="Region">
     <range type="xs:string" facet="true" collation="http://marklogic.com/collation/codepoint">
       <facet-option>limit=5</facet-option>
       <facet-option>item-order</facet-option>
@@ -125,6 +116,14 @@
       <path-index>Region</path-index>
     </range>
   </constraint>
+  <constraint name="City">
+    <range type="xs:string" facet="true" collation="http://marklogic.com/collation/codepoint">
+      <facet-option>limit=5</facet-option>
+      <facet-option>item-order</facet-option>
+      <facet-option>descending</facet-option>
+      <path-index>City</path-index>
+    </range>
+  </constraint>  
 
   <!-- Example geospatial facet based on the sample-data, used by map theme -->
   <constraint name="Location">

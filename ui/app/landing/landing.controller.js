@@ -4,22 +4,28 @@
   angular.module('app.landing')
     .controller('LandingCtrl', LandingCtrl);
 
-  LandingCtrl.$inject = ['$scope', 'userService', 'MLSearchFactory'];
+  LandingCtrl.$inject = ['$scope', '$state', 'userService', 'MLSearchFactory'];
 
-  function LandingCtrl($scope, userService, searchFactory) {
+  function LandingCtrl($scope, $state, userService, searchFactory) {
 
     var ctrl = this;
 
     angular.extend(ctrl, {
-      customerClass: top10Chart('Customer Class', 'pie', 'CustomerClass', 'Customer CLass', 50),
+		search: cari,
+		customerClass: top10Chart('Customer Class', 'pie', 'CustomerClass', 'Customer CLass', 50),
 	  products: top10Chart('Product Type', 'bar', 'Products', 'Product Type', 50),
-	  city: top10Chart('Cities', 'pie', 'Kota', 'City', 50),
-      age: top10Chart('Age', 'bar', 'Umur', 'Age', 50),
-      region: top10Chart('Region', 'bar', 'Wilayah', 'Region', 50),
+	  city: top10Chart('Cities', 'pie', 'City', 'City', 50),
+      age: top10Chart('Age', 'bar', 'Age', 'Age', 50),
+      region: top10Chart('Region', 'bar', 'Region', 'Region', 50),
       combined: top10Chartv2('Customer Class vs Products', 'column', 'Customer-Class', 'Customer Class','Products', 'Product Type')
     });
 
-    $scope.$watch(userService.currentUser, function(user) {
+	  function cari(isi){
+		  //alert(form);
+		  $state.go('root.search', {'q' : isi});
+	  }
+
+  $scope.$watch(userService.currentUser, function(user) {
       if (user && user.authenticated) {
         if (!ctrl.mlSearch) {
           ctrl.mlSearch = searchFactory.newContext();
@@ -31,7 +37,7 @@
     });
 	
   }
-
+  
   function top10Chart(title, type, xFacet, xLabel, limit) {
     return {
       options: {

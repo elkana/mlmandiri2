@@ -2,6 +2,12 @@
   <h1>Welcome Landing Page!</h1>
 </section>
 
+<div class="row" ng-if="rootCtrl.currentUser.authenticated">
+  <div class="col-md-12">
+    <ml-input qtext="ctrl.qtext" search="ctrl.search(qtext)" suggest="ctrl.suggest(val)" template="fa" class="search"></ml-input>
+  </div>
+</div>
+
 <section class="content">
   <content-box box-bordered="true" box-title="Charts">
     <div class="row" ng-if="!rootCtrl.currentUser.authenticated">
