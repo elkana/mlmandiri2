@@ -60,7 +60,7 @@
         }
       })
       .state('root.search', {
-        url: '/search',
+        url: '/search?q',
         templateUrl: 'app/search/search.html',
         controller: 'SearchCtrl',
         controllerAs: 'ctrl',

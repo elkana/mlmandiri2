@@ -9,6 +9,7 @@
     // html dependencies
     'app.dashboard',
     'ml.highcharts',
-    'ui.bootstrap'
+    'ui.bootstrap',
+	'd3.cloud'
   ]);
 }());

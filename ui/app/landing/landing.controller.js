@@ -11,7 +11,7 @@
     var ctrl = this;
 
     angular.extend(ctrl, {
-      customerClass: top10Chart('Customer Class', 'pie', 'Customer-Class', 'Customer CLass', 50),
+      customerClass: top10Chart('Customer Class', 'pie', 'CustomerClass', 'Customer CLass', 50),
 	  products: top10Chart('Product Type', 'bar', 'Products', 'Product Type', 50),
 	  city: top10Chart('Cities', 'pie', 'Kota', 'City', 50),
       age: top10Chart('Age', 'bar', 'Umur', 'Age', 50),
@@ -29,7 +29,7 @@
         ctrl.mlSearch = null; // hide charts
       }
     });
-
+	
   }
 
   function top10Chart(title, type, xFacet, xLabel, limit) {

@@ -26,11 +26,12 @@
 					<tr>
 						<td>
 							<div ng-switch="result.cust_class">
-							  <div class="btn btn-primary btn-sm" ng-switch-when="Standard Class">{{ result.cust_class }}</div>
-							  <div class="btn btn-success btn-sm" ng-switch-when="Silver Class">{{ result.cust_class }}</div>
-							  <div class="btn btn-warning btn-sm" ng-switch-when="Gold Class">{{ result.cust_class }}</div>
-							  <div class="btn btn-danger btn-sm" ng-switch-when="Platinum Class">{{ result.cust_class }}</div>
-							  <div class="btn btn-default btn-sm" ng-switch-default>{{ result.cust_class }}</div>
+								<!-- i cant use ng-click="ctrl.toggleCustClass()" due to scope problem from ml-results -->
+							  <a ui-sref="root.search({q: result.cust_class})"><div class="btn btn-primary btn-sm" ng-switch-when="Standard Class">{{ result.cust_class }}</div></a>
+							  <a ui-sref="root.search({q: result.cust_class})"><div class="btn btn-success btn-sm" ng-switch-when="Silver Class">{{ result.cust_class }}</div></a>
+							  <a ui-sref="root.search({q: result.cust_class})"><div class="btn btn-warning btn-sm" ng-switch-when="Gold Class">{{ result.cust_class }}</div></a>
+							  <a ui-sref="root.search({q: result.cust_class})"><div class="btn btn-danger btn-sm" ng-switch-when="Platinum Class">{{ result.cust_class }}</div></a>
+							  <a ui-sref="root.search({q: result.cust_class})"><div class="btn btn-default btn-sm" ng-switch-default>{{ result.cust_class }}</div></a>
 							</div>
 							
 						</td>

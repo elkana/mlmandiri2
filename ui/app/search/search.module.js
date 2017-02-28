@@ -9,6 +9,7 @@
     'app.snippet',
     'ml.search.tpls',
     'ui.bootstrap',
-    'ui.router'
+    'ui.router',
+	'd3.cloud'
   ]);
 }());
