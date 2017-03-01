@@ -119,13 +119,25 @@
 				<!-- code to render a large video block-->
 						Not Match
 				<div id="demo1" class="collapse">
-					<p/>Salary &gt;= 8 JUTA
-					<br/>Balance &gt;= 50 JUTA
-					<br/>Age &gt;= 22 TAHUN
-					<br/>Kids = 0
-					<br/>houses = 0
-					<br/>vehicles = 0
-				</div>
+					<span ng-if="!(ctrl.json.salary >= '8000000')" style="color:red"><p/>Salary &gt;= 8 JUTA</span>
+					<span ng-if="ctrl.json.salary >= '8000000'"><p/>Salary &gt;= 8 JUTA</span>
+
+					<span ng-if="!((ctrl.json.balance | commaLess) >= 50000000)" style="color:red"><br/>Balance &gt;= 50 JUTA</span>
+					<span ng-if="(ctrl.json.balance | commaLess) >= 50000000"><br/>Balance &gt;= 50 JUTA</span>
+
+					<span ng-if="!(ctrl.json.age >= '22')" style="color:red"><br/>Age &gt;= 22 TAHUN</span>
+					<span ng-if="ctrl.json.age >= '22'"><br/>Age &gt;= 22 TAHUN</span>
+
+					<span ng-if="!(ctrl.json.kids === '0')" style="color:red"><br/>Kids = 0</span>
+					<span ng-if="ctrl.json.kids === '0'"><br/>Kids = 0</span>
+
+					<span ng-if="!(ctrl.json.houses === '0')" style="color:red"><br/>houses = 0</span>
+					<span ng-if="ctrl.json.houses === '0'"><br/>houses = 0</span>
+
+					<span ng-if="!(ctrl.json.vehicles === '0')" style="color:red"><br/>vehicles = 0</span>
+					<span ng-if="ctrl.json.vehicles === '0'"><br/>vehicles = 0</span>
+
+					</div>
 			</div>
 		</div>
 
@@ -148,13 +160,27 @@
 				<!-- code to render a large video block-->
 						Not Match
 				<div id="demo2" class="collapse">
-					<p/>Salary &gt;= 12 JUTA
-					<br/>Balance &gt;= 100 JUTA
-					<br/>Age &gt;= 30 TAHUN
-					<br/>Status Menikah
-					<br/>Kids = 0
-					<br/>houses = 0
-					<br/>vehicles &gt;= 1
+					<span ng-if="!(ctrl.json.salary >= '12000000')" style="color:red"><p/>Salary &gt;= 12 JUTA</span>
+					<span ng-if="ctrl.json.salary >= '12000000'"><p/>Salary &gt;= 12 JUTA</span>
+
+					<span ng-if="!((ctrl.json.balance | commaLess) >= 100000000)" style="color:red"><br/>Balance &gt;= 100 JUTA</span>
+					<span ng-if="(ctrl.json.balance | commaLess) >= 100000000"><br/>Balance &gt;= 100 JUTA</span>
+
+					<span ng-if="!(ctrl.json.age >= '30')" style="color:red"><br/>Age &gt;= 30 TAHUN</span>
+					<span ng-if="ctrl.json.age >= '30'"><br/>Age &gt;= 30 TAHUN</span>
+
+					<span ng-if="!(ctrl.json.category === 'menikah')" style="color:red"><br/>Status Menikah</span>
+					<span ng-if="ctrl.json.category === 'menikah'"><br/>Status Menikah</span>
+
+					<span ng-if="!(ctrl.json.kids === '0')" style="color:red"><br/>Kids = 0</span>
+					<span ng-if="ctrl.json.kids === '0'"><br/>Kids = 0</span>
+
+					<span ng-if="!(ctrl.json.houses === '0')" style="color:red"><br/>houses = 0</span>
+					<span ng-if="ctrl.json.houses === '0'"><br/>houses = 0</span>
+
+					<span ng-if="!(ctrl.json.vehicles >= '1')" style="color:red"><br/>vehicles &gt;= 1</span>
+					<span ng-if="ctrl.json.vehicles >= '1'"><br/>vehicles &gt;= 1</span>
+				
 				</div>
 			</div>
 		</div>
@@ -176,12 +202,24 @@
 				<!-- code to render a large video block-->
 						Not Match
 				<div id="demo3" class="collapse">
-					<p/>Salary &gt;= 8 JUTA
-					<br/>Balance &gt;= 10 JUTA
-					<br/>Age &gt;= 22 TAHUN
-					<br/>Kids = 0
-					<br/>houses = 0
-					<br/>vehicles &gt;= 1
+					<span ng-if="!(ctrl.json.salary >= '8000000')" style="color:red"><p/>Salary &gt;= 8 JUTA</span>
+					<span ng-if="ctrl.json.salary >= '8000000'"><p/>Salary &gt;= 8 JUTA</span>
+
+					<span ng-if="!((ctrl.json.balance | commaLess) >= 10000000)" style="color:red"><br/>Balance &gt;= 10 JUTA</span>
+					<span ng-if="(ctrl.json.balance | commaLess) >= 10000000"><br/>Balance &gt;= 10 JUTA</span>
+
+					<span ng-if="!(ctrl.json.age >= '22')" style="color:red"><br/>Age &gt;= 22 TAHUN</span>
+					<span ng-if="ctrl.json.age >= '22'"><br/>Age &gt;= 22 TAHUN</span>
+
+					<span ng-if="!(ctrl.json.kids === '0')" style="color:red"><br/>Kids = 0</span>
+					<span ng-if="ctrl.json.kids === '0'"><br/>Kids = 0</span>
+
+					<span ng-if="!(ctrl.json.houses === '0')" style="color:red"><br/>houses = 0</span>
+					<span ng-if="ctrl.json.houses === '0'"><br/>houses = 0</span>
+
+					<span ng-if="!(ctrl.json.vehicles >= '1')" style="color:red"><br/>vehicles &gt;= 1</span>
+					<span ng-if="ctrl.json.vehicles >= '1'"><br/>vehicles &gt;= 1</span>
+				
 				</div>
 			</div>
 		</div>
@@ -203,12 +241,24 @@
 				<!-- code to render a large video block-->
 						Not Match
 					<div id="demo4" class="collapse">
-						<p/>Salary &gt;= 8 JUTA
-						<br/>Balance &gt;= 18 JUTA
-						<br/>Age &gt;= 18 TAHUN
-						<br/>Kids = 0
-						<br/>houses = 0
-						<br/>vehicles = 0
+					<span ng-if="!(ctrl.json.salary >= '8000000')" style="color:red"><p/>Salary &gt;= 8 JUTA</span>
+					<span ng-if="ctrl.json.salary >= '8000000'"><p/>Salary &gt;= 8 JUTA</span>
+
+					<span ng-if="!((ctrl.json.balance | commaLess) >= 18000000)" style="color:red"><br/>Balance &gt;= 18 JUTA</span>
+					<span ng-if="(ctrl.json.balance | commaLess) >= 18000000"><br/>Balance &gt;= 18 JUTA</span>
+
+					<span ng-if="!(ctrl.json.age >= '18')" style="color:red"><br/>Age &gt;= 18 TAHUN</span>
+					<span ng-if="ctrl.json.age >= '18'"><br/>Age &gt;= 18 TAHUN</span>
+
+					<span ng-if="!(ctrl.json.kids === '0')" style="color:red"><br/>Kids = 0</span>
+					<span ng-if="ctrl.json.kids === '0'"><br/>Kids = 0</span>
+
+					<span ng-if="!(ctrl.json.houses === '0')" style="color:red"><br/>houses = 0</span>
+					<span ng-if="ctrl.json.houses === '0'"><br/>houses = 0</span>
+
+					<span ng-if="!(ctrl.json.vehicles === '0')" style="color:red"><br/>vehicles = 0</span>
+					<span ng-if="ctrl.json.vehicles === '0'"><br/>vehicles = 0</span>
+					
 					</div>
 			</div>
 		</div>
@@ -231,13 +281,27 @@
 				<!-- code to render a large video block-->
 						Not Match
 				<div id="demo5" class="collapse">
-					<p/>Salary &gt;= 8 JUTA
-					<br/>Balance &gt;= 20 JUTA
-					<br/>Age &gt;= 25 TAHUN
-					<br/>Status Menikah
-					<br/>Kids &gt;= 1
-					<br/>houses = 0
-					<br/>vehicles = 0
+					<span ng-if="!(ctrl.json.salary >= '8000000')" style="color:red"><p/>Salary &gt;= 8 JUTA</span>
+					<span ng-if="ctrl.json.salary >= '8000000'"><p/>Salary &gt;= 8 JUTA</span>
+
+					<span ng-if="!((ctrl.json.balance | commaLess) >= 20000000)" style="color:red"><br/>Balance &gt;= 20 JUTA</span>
+					<span ng-if="(ctrl.json.balance | commaLess) >= 20000000"><br/>Balance &gt;= 20 JUTA</span>
+
+					<span ng-if="!(ctrl.json.age >= '25')" style="color:red"><br/>Age &gt;= 25 TAHUN</span>
+					<span ng-if="ctrl.json.age >= '25'"><br/>Age &gt;= 25 TAHUN</span>
+
+					<span ng-if="!(ctrl.json.category === 'menikah')" style="color:red"><br/>Status Menikah</span>
+					<span ng-if="ctrl.json.category === 'menikah'"><br/>Status Menikah</span>
+
+					<span ng-if="!(ctrl.json.kids >= '1')" style="color:red"><br/>Kids &gt;= 1</span>
+					<span ng-if="ctrl.json.kids >= '1'"><br/>Kids &gt;= 1</span>
+
+					<span ng-if="!(ctrl.json.houses === '0')" style="color:red"><br/>houses = 0</span>
+					<span ng-if="ctrl.json.houses === '0'"><br/>houses = 0</span>
+
+					<span ng-if="!(ctrl.json.vehicles === '0')" style="color:red"><br/>vehicles = 0</span>
+					<span ng-if="ctrl.json.vehicles === '0'"><br/>vehicles = 0</span>
+
 				</div>
 			</div>
 		</div>
