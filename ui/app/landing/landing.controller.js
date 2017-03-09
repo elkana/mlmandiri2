@@ -16,7 +16,7 @@
 	  products: top10Chart('Product Type', 'bar', 'Products', 'Product Type', 50),
 	  city: top10Chart('Cities', 'pie', 'City', 'City', 50),
       age: top10Chart('Age', 'bar', 'Age', 'Age', 50),
-      region: top10Chart('Region', 'bar', 'Region', 'Region', 50),
+      region: top10Chart('Region', 'line', 'Region', 'Region', 50),
       combined: top10Chartv2('Customer Class vs Products', 'column', 'Customer-Class', 'Customer Class','Products', 'Product Type')
     });
 

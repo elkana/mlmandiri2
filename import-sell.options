@@ -16,3 +16,5 @@ true
 ".*data-sample,'/mandiri-sell'"
 -content_encoding
 ISO-8859-1
+-data_type
+"Umur,number,SalaryPerMonth,number,Kids,number,Houses,number,Vehicles,number"
