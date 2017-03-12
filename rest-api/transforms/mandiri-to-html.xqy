@@ -50,6 +50,11 @@ declare function mandiriToHtml:transform(
 		 ,'houses' : $doc_custcc/Houses
 		 ,'vehicles' : $doc_custcc/Vehicles
 		 ,'last_login_date' : $doc_custcc/LastLoginDate
+		 , 'trans_yAxis' : array-node{
+          for $item in $doc_transcc
+               return xdmp:from-json($item)
+          }
+		 ,'trans_xAxis' : array-node{(1,2,3,4)}
 
 		}
 		return xdmp:to-json($obj)
